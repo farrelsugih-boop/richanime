@@ -1,0 +1,15 @@
+{
+    "functions": {
+        "api/**/*.php": {
+            "runtime": "vercel-php@0.9.0"
+        }
+    },
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/farreladmin/(.*)", "dest": "/api/farreladmin/$1" },
+        { "src": "/farreladmin", "dest": "/api/farreladmin/index.php" },
+        { "src": "/anime.php(.*)", "dest": "/api/anime.php$1" },
+        { "src": "/download.php(.*)", "dest": "/api/download.php$1" },
+        { "src": "/", "dest": "/api/index.php" }
+    ]
+}

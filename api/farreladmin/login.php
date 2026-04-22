@@ -8,6 +8,8 @@ if (isset($_POST['login'])) {
 
     if ($username === 'farrelsugih' && $password === 'farrelsugih') {
         $_SESSION['admin_logged_in'] = true;
+        // Fix for Vercel: Set a persistent cookie because sessions are stateless
+        setcookie('admin_session', 'farrelsugih', time() + (86400 * 30), "/"); 
         header('Location: index.php');
         exit;
     } else {

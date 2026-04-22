@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_logged_in'])) {
+if (!isset($_SESSION['admin_logged_in']) && ($_COOKIE['admin_session'] ?? '') !== 'farrelsugih') {
     header('Location: login.php');
     exit;
 }
-require_once '../db.php';
+require_once __DIR__ . '/../db.php';
 
 $anime_count = $pdo->query("SELECT COUNT(*) FROM anime")->fetchColumn();
 $episode_count = $pdo->query("SELECT COUNT(*) FROM episodes")->fetchColumn();

@@ -1,0 +1,5 @@
+.git
+legacy
+*.sqlite-journal
+node_modules
+.env

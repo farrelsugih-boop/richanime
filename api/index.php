@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once __DIR__ . '/db.php';
 $animes = $pdo->query("SELECT * FROM anime ORDER BY title ASC")->fetchAll();
 ?>
 <!DOCTYPE html>
